@@ -1,13 +1,13 @@
-#Prequisite =: 
+# Prequisite =: 
     Install crio 
         edit crio.conf with cgroup_manager="cgroupfs"
     install podman 
 
-#Kubeadmin init: In a multi VM environment its better to use
+# Kubeadmin init: In a multi VM environment its better to use
   flag "apiserver-advertise-address" with the master vm ip
 
 
-# initialize
+# Initialize
   [vagrant@master ~]$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=10.0.0.10
 
 # Calico
