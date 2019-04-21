@@ -1,16 +1,21 @@
-Prequisite =: 
+#Prequisite =: 
     Install crio 
         edit crio.conf with cgroup_manager="cgroupfs"
     install podman 
 
-Kubeadmin init: In a multi VM environment its better to use
- flag "apiserver-advertise-address" with the master vm ip
+#Kubeadmin init: In a multi VM environment its better to use
+  flag "apiserver-advertise-address" with the master vm ip
 
-[vagrant@master ~]$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=10.0.0.10
 
-[vagrant@master ~]$ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
+# initialize
+  [vagrant@master ~]$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=10.0.0.10
 
-[vagrant@master ~]$ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
+# Calico
+  [vagrant@master ~]$ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
+
+  [vagrant@master ~]$ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml
+
+# Sample cheatsheet commands
 
 [vagrant@master ~]$ kubectl get pods --all-namespaces
 NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE
@@ -37,10 +42,11 @@ kube-system   kube-scheduler-master            1/1     Running             0    
     "platform": "linux/amd64"
   }
 }
-*The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
-[vagrant@master ~]$ sudo crictl ps 
-CONTAINER ID        IMAGE                                                              CREATED             STATE               NAME                      ATTEMPT             POD ID
+#The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+  [vagrant@master ~]$ sudo crictl ps 
+  CONTAINER ID        IMAGE                                                              CREATED             STATE               NAME                      ATTEMPT             POD ID
 da6f8d78f6d18       eb516548c180f8a6e0235034ccee2428027896af16a509786da13022fe95fe8c   39 minutes ago      Running             coredns                   1                   e8eed2acb7376
 a8c040d5d3125       eb516548c180f8a6e0235034ccee2428027896af16a509786da13022fe95fe8c   39 minutes ago      Running             coredns                   1                   7db53957eff28
 8ec02d6ae1320       20a2d7035165926828d874302769d26feb6ba80db3965a006bfaa13cf2508286   40 minutes ago      Running             kube-proxy                0                   3bf7189ee331e
@@ -85,7 +91,8 @@ resolution:
 Kubernetes master is running at https://10.0.2.15:6443
 KubeDNS is running at https://10.0.2.15:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
-To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+#To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 
 [vagrant@master ~]$ kubectl config view
