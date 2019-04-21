@@ -17,16 +17,16 @@
 
 # Sample cheatsheet commands
 
-[vagrant@master ~]$ kubectl get pods --all-namespaces
-NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE
-kube-system   calico-node-9qnl7                2/2     Running             0          12s
-kube-system   coredns-fb8b8dccf-9vjqg          0/1     ContainerCreating   0          2m39s
-kube-system   coredns-fb8b8dccf-h2k2q          0/1     ContainerCreating   0          2m39s
-kube-system   etcd-master                      1/1     Running             0          118s
-kube-system   kube-apiserver-master            1/1     Running             0          2m
-kube-system   kube-controller-manager-master   1/1     Running             0          110s
-kube-system   kube-proxy-6mbz9                 1/1     Running             0          2m40s
-kube-system   kube-scheduler-master            1/1     Running             0          98s
+  [vagrant@master ~]$ kubectl get pods --all-namespaces
+  NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE
+  kube-system   calico-node-9qnl7                2/2     Running             0          12s
+  kube-system   coredns-fb8b8dccf-9vjqg          0/1     ContainerCreating   0          2m39s
+  kube-system   coredns-fb8b8dccf-h2k2q          0/1     ContainerCreating   0          2m39s
+  kube-system   etcd-master                      1/1     Running             0          118s
+  kube-system   kube-apiserver-master            1/1     Running             0          2m
+  kube-system   kube-controller-manager-master   1/1     Running             0          110s
+  kube-system   kube-proxy-6mbz9                 1/1     Running             0          2m40s
+  kube-system   kube-scheduler-master            1/1     Running             0          98s
 
 [vagrant@master ~]$ kubectl version -o json
 {
@@ -43,17 +43,17 @@ kube-system   kube-scheduler-master            1/1     Running             0    
   }
 }
 
-#The connection to the server localhost:8080 was refused - did you specify the right host or port?
+# The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
   [vagrant@master ~]$ sudo crictl ps 
   CONTAINER ID        IMAGE                                                              CREATED             STATE               NAME                      ATTEMPT             POD ID
-da6f8d78f6d18       eb516548c180f8a6e0235034ccee2428027896af16a509786da13022fe95fe8c   39 minutes ago      Running             coredns                   1                   e8eed2acb7376
-a8c040d5d3125       eb516548c180f8a6e0235034ccee2428027896af16a509786da13022fe95fe8c   39 minutes ago      Running             coredns                   1                   7db53957eff28
-8ec02d6ae1320       20a2d7035165926828d874302769d26feb6ba80db3965a006bfaa13cf2508286   40 minutes ago      Running             kube-proxy                0                   3bf7189ee331e
-02ddd285a74fd       2c4adeb21b4ff8ed3309d0e42b6b4ae39872399f7b37e0856e673b13c4aba13d   40 minutes ago      Running             etcd                      0                   a4e1c2f662270
-7c35fa7e90756       cfaa4ad74c379e428b953c9aa9962e25a6de470a38b3b62ea2feaef1bfb30e0d   40 minutes ago      Running             kube-apiserver            0                   324f58ee5e648
-bd88fdefa7908       8931473d5bdb74cb743cb3c0bac924f1e19cd728cc8eecf7305af583c0755bf8   40 minutes ago      Running             kube-scheduler            0                   c6cdf24647a1b
-074f266e02f92       efb3887b411d215e2aec3682b2a8ecfbd2926c3e01f730954be67f53132c97fb   40 minutes ago      Running             kube-controller-manager   0                   a4b8359a1c2ff
+  da6f8d78f6d18       eb516548c180f8a6e0235034ccee2428027896af16a509786da13022fe95fe8c   39 minutes ago      Running             coredns                   1                   e8eed2acb7376
+  a8c040d5d3125       eb516548c180f8a6e0235034ccee2428027896af16a509786da13022fe95fe8c   39 minutes ago      Running             coredns                   1                   7db53957eff28
+  8ec02d6ae1320       20a2d7035165926828d874302769d26feb6ba80db3965a006bfaa13cf2508286   40 minutes ago      Running             kube-proxy                0                   3bf7189ee331e
+  02ddd285a74fd       2c4adeb21b4ff8ed3309d0e42b6b4ae39872399f7b37e0856e673b13c4aba13d   40 minutes ago      Running             etcd                      0                   a4e1c2f662270
+  7c35fa7e90756       cfaa4ad74c379e428b953c9aa9962e25a6de470a38b3b62ea2feaef1bfb30e0d   40 minutes ago      Running             kube-apiserver            0                   324f58ee5e648
+  bd88fdefa7908       8931473d5bdb74cb743cb3c0bac924f1e19cd728cc8eecf7305af583c0755bf8   40 minutes ago      Running             kube-scheduler            0                   c6cdf24647a1b
+  074f266e02f92       efb3887b411d215e2aec3682b2a8ecfbd2926c3e01f730954be67f53132c97fb   40 minutes ago      Running             kube-controller-manager   0                   a4b8359a1c2ff
 
 
 resolution:
@@ -88,8 +88,8 @@ resolution:
 }
 
 [vagrant@master ~]$ kubectl cluster-info
-Kubernetes master is running at https://10.0.2.15:6443
-KubeDNS is running at https://10.0.2.15:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+  Kubernetes master is running at https://10.0.2.15:6443
+  KubeDNS is running at https://10.0.2.15:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 
 #To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
@@ -135,16 +135,16 @@ dbf1a8631d5a0       docker.io/calico/node@sha256:f288d3586e552d748dc655db5c9a75a
 
 
 #Ok, so now that we're tired of typing commands out, let's enable bash auto-complete of our kubectl commands
-sudo apt-get install bash-completion
-echo "source <(kubectl completion bash)" >> ~/.bashrc
-source ~/.bashrc
-kubectl g[tab][tab] po[tab][tab] --all[tab][tab]
+  sudo apt-get install bash-completion
+  echo "source <(kubectl completion bash)" >> ~/.bashrc
+  source ~/.bashrc
+  kubectl g[tab][tab] po[tab][tab] --all[tab][tab]
 
 
 
-kubectl -v=9 exec -it etcd-master -- /bin/sh
+  kubectl -v=9 exec -it etcd-master -- /bin/sh
 
-kubectl get nodes master -o json | jq .status.addresses
+  kubectl get nodes master -o json | jq .status.addresses
 
 
 #resolving the internal-ip of the node
