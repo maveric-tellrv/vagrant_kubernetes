@@ -163,3 +163,16 @@ dbf1a8631d5a0       docker.io/calico/node@sha256:f288d3586e552d748dc655db5c9a75a
     node2    Ready    <none>   9m18s   v1.14.1   10.0.2.15     <none>        CentOS Linux 7 (Core)   3.10.0-957.5.1.el7.x86_64   cri-o://1.11.11-1.rhaos3.11.git474f73d.el7
 
 I changed the node ip of node1 and its now updated to 10.0.0.11 the ip of ETH1 of vagrant machine.
+
+# Error: Failed to get system container stats for "/system.slice/kubelet.service":
+    Refer https://github.com/kubernetes/kops/issues/4049
+    REsolution :
+      sudo vim /etc/sysconfig/kubelet
+
+        add at the end of DAEMON_ARGS string:
+
+        --runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice
+
+      finally:
+
+        sudo systemctl restart kubelet
