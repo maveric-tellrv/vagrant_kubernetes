@@ -17,20 +17,20 @@
 
 # Sample cheatsheet commands
 
-  [vagrant@master ~]$ kubectl get pods --all-namespaces
-  NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE
-  kube-system   calico-node-9qnl7                2/2     Running             0          12s
-  kube-system   coredns-fb8b8dccf-9vjqg          0/1     ContainerCreating   0          2m39s
-  kube-system   coredns-fb8b8dccf-h2k2q          0/1     ContainerCreating   0          2m39s
-  kube-system   etcd-master                      1/1     Running             0          118s
-  kube-system   kube-apiserver-master            1/1     Running             0          2m
-  kube-system   kube-controller-manager-master   1/1     Running             0          110s
-  kube-system   kube-proxy-6mbz9                 1/1     Running             0          2m40s
-  kube-system   kube-scheduler-master            1/1     Running             0          98s
+    [vagrant@master ~]$ kubectl get pods --all-namespaces
+    NAMESPACE     NAME                             READY   STATUS              RESTARTS   AGE
+    kube-system   calico-node-9qnl7                2/2     Running             0          12s
+    kube-system   coredns-fb8b8dccf-9vjqg          0/1     ContainerCreating   0          2m39s
+      kube-system   coredns-fb8b8dccf-h2k2q          0/1     ContainerCreating   0          2m39s
+     kube-system   etcd-master                      1/1     Running             0          118s
+      kube-system   kube-apiserver-master            1/1     Running             0          2m
+      kube-system   kube-controller-manager-master   1/1     Running             0          110s
+      kube-system   kube-proxy-6mbz9                 1/1     Running             0          2m40s
+     kube-system   kube-scheduler-master            1/1     Running             0          98s
 
-[vagrant@master ~]$ kubectl version -o json
-{
-  "clientVersion": {
+    [vagrant@master ~]$ kubectl version -o json
+    {
+      "clientVersion": {
     "major": "1",
     "minor": "14",
     "gitVersion": "v1.14.1",
@@ -40,8 +40,8 @@
     "goVersion": "go1.12.1",
     "compiler": "gc",
     "platform": "linux/amd64"
-  }
-}
+      }
+    }
 
 # The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
