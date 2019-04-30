@@ -180,12 +180,12 @@ users:
         sudo systemctl restart kubelet
         
  # Error like:
-         Failed to list *v1beta1.CSIDriver: Get https://10.0.0.10:6443
+        Failed to list *v1beta1.CSIDriver: Get https://10.0.0.10:6443
         Apr 23 09:39:08 master kubelet[7419]: E0423 09:39:08.127284    7419 reflector.go:126] k8s.io/client-                           go/informers/factory.go:133: Failed to list *v1beta1.RuntimeClass: Get https://10.0.0.10:6
         k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.0.0.10:6443/api
         k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.0.0.10:6443
     
-    Resolution:
+       Resolution:
        #cgroup_manager is the cgroup management implementation to be used
         for the runtime.
         cgroup_manager = "cgroupfs
